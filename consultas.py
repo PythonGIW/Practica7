@@ -39,8 +39,9 @@ def find_users():
 @get('/find_users_or')
 def find_users_or():
     # http://localhost:8080/find_users_or?name=Luz&surname=Corral
-    pass
-       
+    #pass
+    data = c.
+	Persona.objects( Q(name='Luz') | Q(surname='Corral') ) 
                
 @get('/find_like')
 def find_like():
