@@ -4,7 +4,7 @@
 Autores: 
 Alberto Marquez
 Álvaro Asenjo
-Juan Montiel 
+Juan Jose Montiel 
 Declaramos que esta solución
 es fruto exclusivamente de nuestro trabajo personal. No hemos sido
 ayudados por ninguna otra persona ni hemos obtenido la solución de
@@ -24,7 +24,8 @@ c = db['usuarios']
  
 @get('/find_user')
 def find_user():
-    data = c.find({'_id':'burgoscarla'})
+    username = request.query['username'];
+    data = c.find({'_id':username})
     return template('find_user.tpl', result = data)
         
 
