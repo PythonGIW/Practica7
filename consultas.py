@@ -24,24 +24,39 @@ c = db['usuarios']
  
 @get('/find_user')
 def find_user():
-    username = request.query['username'];
+    username = request.query['username']
     data = c.find({'_id':username})
     return template('find_user.tpl', result = data)
         
 
 @get('/find_users')
 def find_users():
+    params = request.query_string
+    listaP = params.split("&")
+    keys = []
+    values = []
+    for param in listaP:
+        p = param.split("=")
+        if(p[0] == "name" or p[0] == "surname" or p[0] == "birthday"):
+            keys.append(p[0])
+            values.append(p[1])
+        else:
+            print "Error"
+            break
+    print keys
+    print values
+    data = c.find({keys:values})
+    return template('find_user.tpl', result = data)
+    #print data0
     # http://localhost:8080/find_users?name=Luz
     # http://localhost:8080/find_users?name=Luz&surname=Romero
     # http://localhost:8080/find_users?name=Luz&food=hotdog
-    pass
         
         
 @get('/find_users_or')
 def find_users_or():
     # http://localhost:8080/find_users_or?name=Luz&surname=Corral
     #pass
-    data = c.
 	Persona.objects( Q(name='Luz') | Q(surname='Corral') ) 
                
 @get('/find_like')
