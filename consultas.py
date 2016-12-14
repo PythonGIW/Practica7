@@ -38,14 +38,24 @@ def find_users():
     for param in listaP:
         p = param.split("=")
         if(p[0] == "name" or p[0] == "surname" or p[0] == "birthday"):
-            keys.append(p[0])
+            if(p[0] == "birthday"):
+                keys.append("birthdate")
+            else:
+                keys.append(p[0])
             values.append(p[1])
         else:
             print "Error"
+            return template('find_user.tpl', result = data)
             break
     print keys
     print values
-    data = c.find({keys:values})
+    if(len(keys) == 1):
+        data = c.find({keys[0]:values[0]})
+    elif (len(keys) == 2):
+        data = c.find({keys[0]:values[0], keys[1]:values[1]})
+    elif (len(keys) == 3):
+        data = c.find({keys[0]:values[0], keys[1]:values[1], keys[2]:values[2]})
+
     return template('find_user.tpl', result = data)
     #print data0
     # http://localhost:8080/find_users?name=Luz

@@ -27,7 +27,5 @@
     </div>
     <div id="site_content">
       <div id="content">
-</body>
-</html>
 
 

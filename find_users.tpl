@@ -28,20 +28,12 @@
     <div id="site_content">
       	<div id="content">
 	    	<h1>Usuarios</h1>
-	    	<ul>
-	   		 %for r in result:
-	        	<li>{{r['_id']}}</li>
-	        	<li>{{r['_id']}}</li>
-	        	<li>{{r['_id']}}</li>
-	        	<li>{{r['_id']}}</li>
-	        	<li>{{r['_id']}}</li>
-	        	<li>{{r['_id']}}</li>
-	        	<li>{{r['_id']}}</li>
-	        	<li>{{r['_id']}}</li>
-	        	<li>{{r['_id']}}</li>
-	        	
+	    	<tr><th>Nombre Usuario</th><th>Email</th><th>Tarjeta</th><th>Pagina Web</th><th>Hash</th><th>Nombre</th>....</tr>
+	    	<tr>
+	   		 %for r in rows:
+	        	<td>{{r}}</td>
 	    	%end 
-	    	</ul>
+	    	</tr>
     	</div>
     </div>
 </body>
