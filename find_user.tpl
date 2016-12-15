@@ -13,17 +13,6 @@
       <div id="logo">
         <h1>BASE DE DATOS DE USUARIOS</h1>
       </div>
-      <div id="menubar">
-        <ul id="menu">
-          <li><a href="/find_user">FIND USER</a></li>
-          <li><a href="/find_users">FIND USERS</a></li>
-          <li><a href="/find_users_or">FIND USERS OR</a></li>
-          <li><a href="/find_like">FIND LIKE</a></li>
-          <li><a href="/find_country">FIND COUNTRY</a></li>
-          <li><a href="/find_email_birthdate">FIND EMAILBIRTHDAY</a></li>
-          <li><a href="/find_country_likes_limit_sorted">FIND COUNTRY LIKES LIMIT SORTED</a></li>
-        </ul>
-      </div>
     </div>
     <div id="site_content">
       	<div id="content">
@@ -31,15 +20,15 @@
 	    	<ul>
 	   		 %for r in result:
 	        	<li>{{r['_id']}}</li>
-	        	<li>{{r['_id']}}</li>
-	        	<li>{{r['_id']}}</li>
-	        	<li>{{r['_id']}}</li>
-	        	<li>{{r['_id']}}</li>
-	        	<li>{{r['_id']}}</li>
-	        	<li>{{r['_id']}}</li>
-	        	<li>{{r['_id']}}</li>
-	        	<li>{{r['_id']}}</li>
-	        	
+	        	<li>{{r['email']}}</li>
+	        	<li>{{r['webpage']}}</li>
+	        	<li>{{r['credit_card']}}</li>
+	        	<li>{{r['password']}}</li>
+	        	<li>{{r['name']}}</li>
+	        	<li>{{r['surname']}}</li>
+	        	<li>{{r['address']}}</li>
+            <li>{{r['likes']}}</li>
+            <li>{{r['birthdate']}}</li>        	
 	    	%end 
 	    	</ul>
     	</div>

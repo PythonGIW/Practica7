@@ -13,27 +13,15 @@
       <div id="logo">
         <h1>BASE DE DATOS DE USUARIOS</h1>
       </div>
-      <div id="menubar">
-        <ul id="menu">
-          <li><a href="/find_user">FIND USER</a></li>
-          <li><a href="/find_users">FIND USERS</a></li>
-          <li><a href="/find_users_or">FIND USERS OR</a></li>
-          <li><a href="/find_like">FIND LIKE</a></li>
-          <li><a href="/find_country">FIND COUNTRY</a></li>
-          <li><a href="/find_email_birthdate">FIND EMAILBIRTHDAY</a></li>
-          <li><a href="/find_country_likes_limit_sorted">FIND COUNTRY LIKES LIMIT SORTED</a></li>
-        </ul>
-      </div>
     </div>
     <div id="site_content">
       	<div id="content">
-	    	<h1>Usuarios</h1>
-	    	<tr><th>Nombre Usuario</th><th>Email</th><th>Tarjeta</th><th>Pagina Web</th><th>Hash</th><th>Nombre</th>....</tr>
-	    	<tr>
-	   		 %for r in rows:
-	        	<td>{{r}}</td>
-	    	%end 
-	    	</tr>
+        <center><table>
+        <tr><th>Nombre usuario</th><th>Email</th><th>Pagina Web</th><th>Tarjeta</th></tr><th>Hash</th></tr><th>Nombre</th></tr><th>Apellido</th></tr><th>Direccion</th></tr><th>Aficiones</th></tr><th>Fecha de nacimiento</th></tr>
+        %for row in result:
+          <td>{{row}}</td> 
+        %end 
+        </table></center>
     	</div>
     </div>
 </body>
